@@ -4,6 +4,7 @@ import { FaCamera, FaPen, FaCheck, FaTimes } from 'react-icons/fa';
 import useAuthStore from '../store/useAuthStore';
 import { userService } from '../services/UserService';
 import { toast } from 'react-hot-toast';
+import Themes from '../components/Themes';
 
 function UserProfile() {
     const { user, setUser } = useAuthStore();
@@ -183,6 +184,8 @@ function UserProfile() {
                     </div>
                 </motion.div>
             </div>
+            
+            <Themes/>
         </div>
     );
 }

@@ -5,12 +5,14 @@ import { useThemeStore } from '../store/useThemeStore'
 function Themes() {
     const { theme, setTheme } = useThemeStore()
     return (
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-wrap justify-center gap-2 mt-8">
+            <h2 className="text-lg font-semibold mb-4 w-full text-center">Themes</h2>
+            {/* Render theme buttons */}
             {THEMES.map((t) => (
                 <button
                     key={t}
                     className={`
-                group flex flex-col items-center gap-1.5 p-2 rounded-lg transition-colors
+                group flex flex-col items-center w-[150px] gap-1.5 p-2 rounded-lg transition-colors
                 ${theme === t ? "bg-base-200" : "hover:bg-base-200/50"}
               `}
                     onClick={() => setTheme(t)}

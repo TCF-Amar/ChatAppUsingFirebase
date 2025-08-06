@@ -108,7 +108,7 @@ function ChatContainer({ selectedContact }) {
     if (!selectedContact) {
         return (
             <div className="h-full flex items-center justify-center bg-neutral/20 backdrop-blur-md rounded-lg">
-                <div className="text-center text-gray-400">
+                <div className="text-center opacity-60">
                     <div className="text-6xl mb-4">👋</div>
                     <h3 className="text-xl font-semibold mb-2">Welcome to Chat</h3>
                     <p>Select a contact to start messaging</p>
@@ -129,17 +129,17 @@ function ChatContainer({ selectedContact }) {
                             className="w-10 h-10 rounded-full object-cover border-2 border-white/20"
                         />
                     ) : (
-                        <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-full flex items-center justify-center text-white font-semibold border-2 border-white/20">
+                        <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-full flex items-center justify-center font-semibold border-2 border-white/20">
                             {selectedContact?.displayName?.charAt(0).toUpperCase()}
                         </div>
                     )}
                     <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-gray-900"></div>
                 </div>
                 <div className="flex-1">
-                    <h3 className="font-semibold text-white">
+                    <h3 className="font-semibold">
                         {selectedContact?.displayName || "Chat"}
                     </h3>
-                    <p className="text-xs text-gray-400">
+                    <p className="text-xs opacity-60">
                         {remoteTyping ? 'typing...' : ''}
                     </p>
                 </div>
@@ -157,8 +157,8 @@ function ChatContainer({ selectedContact }) {
                             className={`flex ${msg.senderId === user.uid ? 'justify-end' : 'justify-start'}`}
                         >
                             <div className={`group relative max-w-[75%] break-words ${msg.senderId === user.uid
-                                    ? 'bg-indigo-600 text-white rounded-l-xl rounded-tr-xl'
-                                    : 'bg-neutral/20 text-white rounded-r-xl rounded-tl-xl'
+                                    ? 'bg-indigo-600 rounded-l-xl rounded-tr-xl'
+                                    : 'bg-neutral/20 rounded-r-xl rounded-tl-xl'
                                 } p-3 shadow-lg hover:shadow-xl transition-all`}>
                                 {msg.senderId === user.uid && (
                                     <div className="absolute -right-12 top-0 hidden group-hover:flex items-center gap-2">
@@ -166,7 +166,7 @@ function ChatContainer({ selectedContact }) {
                                             whileHover={{ scale: 1.1 }}
                                             whileTap={{ scale: 0.9 }}
                                             onClick={() => handleEditMessage(msg)}
-                                            className="p-1.5 bg-neutral/30 rounded-full hover:bg-neutral/40 text-white/80"
+                                            className="p-1.5 bg-neutral/30 rounded-full hover:bg-neutral/40 opacity-80"
                                         >
                                             <FaEdit size={12} />
                                         </motion.button>
@@ -174,7 +174,7 @@ function ChatContainer({ selectedContact }) {
                                             whileHover={{ scale: 1.1 }}
                                             whileTap={{ scale: 0.9 }}
                                             onClick={() => handleDeleteMessage(msg.id)}
-                                            className="p-1.5 bg-neutral/30 rounded-full hover:bg-neutral/40 text-white/80"
+                                            className="p-1.5 bg-neutral/30 rounded-full hover:bg-neutral/40 opacity-80"
                                         >
                                             <FaTrash size={12} />
                                         </motion.button>
@@ -234,15 +234,15 @@ function ChatContainer({ selectedContact }) {
                             }
                         }}
                         placeholder="Type a message..."
-                        className="flex-1 bg-neutral/20 text-white placeholder-gray-400 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-neutral/30"
+                        className="flex-1 bg-neutral/20 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-neutral/30"
                     />
                     <motion.button
                         type="submit"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         className={`p-2 rounded-lg transition-colors ${message.trim()
-                                ? 'bg-indigo-600 text-white hover:bg-indigo-700'
-                                : 'bg-neutral/50 text-gray-400 cursor-not-allowed'
+                                ? 'bg-indigo-600 hover:bg-indigo-700'
+                                : 'bg-neutral/50 opacity-40 cursor-not-allowed'
                             }`}
                         disabled={!message.trim()}
                     >
