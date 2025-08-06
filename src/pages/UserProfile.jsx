@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaCamera, FaPen, FaCheck, FaTimes } from 'react-icons/fa';
 import useAuthStore from '../store/useAuthStore';
-import { userService } from '../services/UserService';
+import { userService } from '../services/userService';
 import { toast } from 'react-hot-toast';
 import Themes from '../components/Themes';
 
