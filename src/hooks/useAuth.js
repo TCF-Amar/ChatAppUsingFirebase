@@ -3,7 +3,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../config/firebase.js";
 import useAuthStore from "../store/useAuthStore.js";
 import { redirect } from "react-router-dom";
-import { userService } from "../services/UserService";
+import { userService } from "../services/userService.js";
 
 const useAuth = () => {
     const { setUser, clearUser, setAuthentication, setLoading } = useAuthStore();
