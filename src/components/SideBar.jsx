@@ -1,6 +1,6 @@
 import React from 'react'
 import Contacts from './Contacts'
-import { userService } from '../services/UserService';
+import { userService } from '../services/userService.js';
 
 function SideBar() {
     const [search, setSearch] = React.useState('');

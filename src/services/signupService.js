@@ -1,7 +1,7 @@
 
 import { auth } from "../config/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { userService } from "./UserService";
+import { userService } from "./userService.js";
 import { toast } from "react-hot-toast";
 import generateContactNumber from "../utils/contactNo";
 

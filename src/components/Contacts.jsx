@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import useAuthStore from '../store/useAuthStore';
-import { userService } from '../services/UserService';
-import { chatService } from '../services/chatService';
+import { userService } from '../services/userService.js';
+import { chatService } from '../services/chatService.js';
 import { motion, AnimatePresence } from 'framer-motion';
 import { toast } from 'react-hot-toast';
 import { FaTimes, FaUserFriends } from 'react-icons/fa';
